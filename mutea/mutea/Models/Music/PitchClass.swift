@@ -1,38 +1,43 @@
 import Foundation
 
 
-public enum PitchClass {
+public enum PitchClass : String, CustomDebugStringConvertible {
 
-	case bSharp
-	case c
+	case bSharp = "B#"
+	case c = "C"
 	
-	case cSharp
-	case dFlat
+	case cSharp = "C#"
+	case dFlat = "Db"
 	
-	case d
+	case d = "D"
 	
-	case dSharp
-	case eFlat
+	case dSharp = "D#"
+	case eFlat = "Eb"
 	
-	case e
+	case e = "E"
 	
-	case eSharp
-	case f
+	case eSharp = "E#"
+	case f = "F"
 	
-	case fSharp
-	case gFlat
+	case fSharp = "F#"
+	case gFlat = "Gb"
 	
-	case g
+	case g = "G"
 	
-	case gSharp
-	case aFlat
+	case gSharp = "G#"
+	case aFlat = "Ab"
 	
-	case a
+	case a = "A"
 	
-	case aSharp
-	case bFlat
+	case aSharp = "A#"
+	case bFlat = "Bb"
 	
-	case b
-	case cFlat
+	case b = "B"
+	case cFlat = "Cb"
+
+
+	public var debugDescription: String {
+		return self.rawValue
+	}
 	
 }

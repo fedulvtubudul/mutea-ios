@@ -1,7 +1,7 @@
 import Foundation
 
 
-public enum Degree : String {
+public enum Degree : String, CustomDebugStringConvertible {
 
 //	case perfectFirst = "1"
 	case first = "1"
@@ -46,5 +46,10 @@ public enum Degree : String {
 	
 //	case augmentedSeventh = "+7"
 //	case perfectEighth = "8"
+
+
+	public var debugDescription: String {
+		return self.rawValue;
+	}
 
 }
