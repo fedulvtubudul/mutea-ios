@@ -1,0 +1,9 @@
+platform :ios, '9.0'
+
+target 'mutea' do
+	use_frameworks!
+
+	pod 'CocoaLumberjack'
+	pod 'RxSwift'
+
+end
