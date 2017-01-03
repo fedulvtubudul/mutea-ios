@@ -15,6 +15,7 @@ public enum PitchClass : String, CustomDebugStringConvertible {
 	case eFlat = "Eb"
 	
 	case e = "E"
+	case fFlat = "Fb"
 	
 	case eSharp = "E#"
 	case f = "F"
