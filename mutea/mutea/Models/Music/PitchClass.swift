@@ -41,4 +41,23 @@ public enum PitchClass : String, CustomDebugStringConvertible {
 		return self.rawValue
 	}
 	
+	public var value : PitchClassValue {
+		get {
+			switch self {
+				case .bSharp, .c: return .c
+				case .cSharp, .dFlat: return .cd
+				case .d: return .d
+				case .dSharp, .eFlat: return .de
+				case .e, .fFlat: return .e
+				case .eSharp, .f: return .f
+				case .fSharp, .gFlat: return .fg
+				case .g: return .g
+				case .gSharp, .aFlat: return .ga
+				case .a: return .a
+				case .aSharp, .bFlat: return .ab
+				case .b, .cFlat: return .b
+			}
+		}
+	}
+	
 }

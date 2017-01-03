@@ -17,6 +17,7 @@
 		FF6FBA631E1A45CF00D5BE17 /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FBA621E1A45CF00D5BE17 /* Scale.swift */; };
 		FF6FBA651E1A470100D5BE17 /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FBA641E1A470100D5BE17 /* Degree.swift */; };
 		FF6FBA671E1A974000D5BE17 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FBA661E1A974000D5BE17 /* TestVC.swift */; };
+		FF6FBA691E1AD5DE00D5BE17 /* PitchClassValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FBA681E1AD5DE00D5BE17 /* PitchClassValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		FF6FBA621E1A45CF00D5BE17 /* Scale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
 		FF6FBA641E1A470100D5BE17 /* Degree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
 		FF6FBA661E1A974000D5BE17 /* TestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		FF6FBA681E1AD5DE00D5BE17 /* PitchClassValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClassValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			children = (
 				FF6FBA641E1A470100D5BE17 /* Degree.swift */,
 				FF6FBA601E1A44DB00D5BE17 /* PitchClass.swift */,
+				FF6FBA681E1AD5DE00D5BE17 /* PitchClassValue.swift */,
 				FF6FBA621E1A45CF00D5BE17 /* Scale.swift */,
 			);
 			path = Music;
@@ -275,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF6FBA671E1A974000D5BE17 /* TestVC.swift in Sources */,
+				FF6FBA691E1AD5DE00D5BE17 /* PitchClassValue.swift in Sources */,
 				FF6FBA511E1A3F7200D5BE17 /* AppDelegate.swift in Sources */,
 				FF6FBA631E1A45CF00D5BE17 /* Scale.swift in Sources */,
 				FF6FBA611E1A44DB00D5BE17 /* PitchClass.swift in Sources */,
