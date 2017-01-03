@@ -51,5 +51,34 @@ public enum Degree : String, CustomDebugStringConvertible {
 	public var debugDescription: String {
 		return self.rawValue;
 	}
+	
+	public var absoluteValue: Int {
+		switch self {
+			case .first: return 0
+			case .minorSecond: return 1
+			case .second: return 2
+			case .minorThird: return 3
+			case .majorThird: return 4
+			case .fourth: return 5
+			case .augmentedFourth, .diminishedFifth: return 6
+			case .fifth: return 7
+			case .augmentedFifth, .minorSixth: return 8
+			case .sixth: return 9
+			case .augmentedSixth, .minorSeventh: return 10
+			case .majorSeventh: return 11
+		}
+	}
+	
+	public var relativeValue: Int {
+		switch self {
+			case .first: return 0
+			case .minorSecond, .second: return 1
+			case .minorThird, .majorThird: return 2
+			case .fourth, .augmentedFourth: return 3
+			case .diminishedFifth, .fifth, .augmentedFifth: return 4
+			case .minorSixth, .sixth, .augmentedSixth: return 5
+			case .minorSeventh, .majorSeventh: return 6
+		}
+	}
 
 }
