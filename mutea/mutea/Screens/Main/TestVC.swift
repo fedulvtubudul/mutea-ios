@@ -6,7 +6,7 @@ class TestVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		let cMajorScale = Scale.init(key: .c, degrees: [
+		let majorScaleDegrees: [Degree] = [
 				.first,
 				.second,
 				.majorThird,
@@ -14,9 +14,12 @@ class TestVC: UIViewController {
 				.fifth,
 				.sixth,
 				.majorSeventh,
-			])
+			]
 		
-		print(cMajorScale)
+		for key in PitchClass.allValues {
+			let scale = Scale.init(key: key, degrees: majorScaleDegrees)
+			print(scale);
+		}		
     }
 
 }
