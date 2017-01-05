@@ -13,18 +13,15 @@ public struct Scale : CustomDebugStringConvertible {
 	}
 	
 	public var pitchClasses: [PitchClass] {
-		get {
+		let rootAbsoluteValue = self.key.absoluteValue
+		let rootRelativeValue = self.key.relativeValue
+		
+		return self.degrees.map({ (degree: Degree) -> PitchClass in
+				let absoluteValue = PitchClassAbsoluteValue.value(withRoot: rootAbsoluteValue, interval: degree.absoluteValue)!
+				let relativeValue = PitchClassRelativeValue.value(withRoot: rootRelativeValue, interval: degree.relativeValue)!
 			
-			let rootAbsoluteValue = self.key.absoluteValue
-			let rootRelativeValue = self.key.relativeValue
-			
-			return self.degrees.map({ (degree: Degree) -> PitchClass in
-					let absoluteValue = PitchClassAbsoluteValue.value(withRoot: rootAbsoluteValue, interval: degree.absoluteValue)!
-					let relativeValue = PitchClassRelativeValue.value(withRoot: rootRelativeValue, interval: degree.relativeValue)!
-				
-					return PitchClass.classWithValue(absoluteValue: absoluteValue, relativeValue: relativeValue)!
-				})		
-		}
+				return PitchClass.classWithValue(absoluteValue: absoluteValue, relativeValue: relativeValue)!
+			})
 	}
 
 	public var debugDescription: String {
