@@ -16,7 +16,7 @@ class TestVC: UIViewController {
 				.majorSeventh,
 			]
 		
-		for key in PitchClass.allValues {
+		for key in PitchClass.possibleKeys {
 			let scale = Scale.init(key: key, degrees: majorScaleDegrees)
 			print(scale);
 		}		

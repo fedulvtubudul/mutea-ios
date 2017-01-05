@@ -47,6 +47,15 @@ public enum PitchClass : String, CustomDebugStringConvertible {
 			bFlat, b, bSharp,
 		]
 
+	static let possibleKeys = [
+			c, cSharp,
+			dFlat, d,
+			eFlat, e,
+			f, fSharp,
+			gFlat, g,
+			aFlat, a,
+			bFlat, b,
+		]
 
 	public var debugDescription: String {
 		return self.rawValue
