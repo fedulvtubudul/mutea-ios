@@ -18,7 +18,18 @@
 		FF6FBA651E1A470100D5BE17 /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FBA641E1A470100D5BE17 /* Degree.swift */; };
 		FF6FBA671E1A974000D5BE17 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FBA661E1A974000D5BE17 /* TestVC.swift */; };
 		FF6FBA691E1AD5DE00D5BE17 /* PitchClassValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FBA681E1AD5DE00D5BE17 /* PitchClassValue.swift */; };
+		FFA52D3A1E2B8DAF00616088 /* ScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA52D391E2B8DAF00616088 /* ScaleTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFA52D3C1E2B8DAF00616088 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF6FBA2A1E1A3AAB00D5BE17 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF6FBA311E1A3AAB00D5BE17;
+			remoteInfo = mutea;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2583BEE9F26D56CA92DC5419 /* Pods-mutea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mutea.release.xcconfig"; path = "Pods/Target Support Files/Pods-mutea/Pods-mutea.release.xcconfig"; sourceTree = "<group>"; };
@@ -36,6 +47,9 @@
 		FF6FBA641E1A470100D5BE17 /* Degree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
 		FF6FBA661E1A974000D5BE17 /* TestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		FF6FBA681E1AD5DE00D5BE17 /* PitchClassValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchClassValue.swift; sourceTree = "<group>"; };
+		FFA52D371E2B8DAF00616088 /* muteaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = muteaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFA52D391E2B8DAF00616088 /* ScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTests.swift; sourceTree = "<group>"; };
+		FFA52D3B1E2B8DAF00616088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +58,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D465421BFA7FB2188BBA10C7 /* Pods_mutea.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFA52D341E2B8DAF00616088 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				FF6FBA341E1A3AAB00D5BE17 /* mutea */,
+				FFA52D381E2B8DAF00616088 /* muteaTests */,
 				FF6FBA331E1A3AAB00D5BE17 /* Products */,
 				205E7ABC57297F7A199CA6EC /* Pods */,
 				1BC894B00A2DBCD6C2F45E73 /* Frameworks */,
@@ -81,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				FF6FBA321E1A3AAB00D5BE17 /* mutea.app */,
+				FFA52D371E2B8DAF00616088 /* muteaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +174,15 @@
 			path = Music;
 			sourceTree = "<group>";
 		};
+		FFA52D381E2B8DAF00616088 /* muteaTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFA52D391E2B8DAF00616088 /* ScaleTests.swift */,
+				FFA52D3B1E2B8DAF00616088 /* Info.plist */,
+			);
+			path = muteaTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,6 +206,24 @@
 			productReference = FF6FBA321E1A3AAB00D5BE17 /* mutea.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FFA52D361E2B8DAF00616088 /* muteaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFA52D401E2B8DAF00616088 /* Build configuration list for PBXNativeTarget "muteaTests" */;
+			buildPhases = (
+				FFA52D331E2B8DAF00616088 /* Sources */,
+				FFA52D341E2B8DAF00616088 /* Frameworks */,
+				FFA52D351E2B8DAF00616088 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFA52D3D1E2B8DAF00616088 /* PBXTargetDependency */,
+			);
+			name = muteaTests;
+			productName = muteaTests;
+			productReference = FFA52D371E2B8DAF00616088 /* muteaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -189,6 +239,12 @@
 						DevelopmentTeam = GUCJ7YDNMH;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
+					};
+					FFA52D361E2B8DAF00616088 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = GUCJ7YDNMH;
+						ProvisioningStyle = Automatic;
+						TestTargetID = FF6FBA311E1A3AAB00D5BE17;
 					};
 				};
 			};
@@ -206,6 +262,7 @@
 			projectRoot = "";
 			targets = (
 				FF6FBA311E1A3AAB00D5BE17 /* mutea */,
+				FFA52D361E2B8DAF00616088 /* muteaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -219,6 +276,13 @@
 				FF6FBA5E1E1A40F100D5BE17 /* LaunchScreen.storyboard in Resources */,
 				FF6FBA5A1E1A409E00D5BE17 /* Localizable.strings in Resources */,
 				FF6FBA571E1A405100D5BE17 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFA52D351E2B8DAF00616088 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +350,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FFA52D331E2B8DAF00616088 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFA52D3A1E2B8DAF00616088 /* ScaleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFA52D3D1E2B8DAF00616088 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF6FBA311E1A3AAB00D5BE17 /* mutea */;
+			targetProxy = FFA52D3C1E2B8DAF00616088 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FF6FBA5C1E1A409E00D5BE17 /* Localizable.strings */ = {
@@ -426,6 +506,36 @@
 			};
 			name = Release;
 		};
+		FFA52D3E1E2B8DAF00616088 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GUCJ7YDNMH;
+				INFOPLIST_FILE = muteaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agorbunov.muteaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mutea.app/mutea";
+			};
+			name = Debug;
+		};
+		FFA52D3F1E2B8DAF00616088 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = GUCJ7YDNMH;
+				INFOPLIST_FILE = muteaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agorbunov.muteaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mutea.app/mutea";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -446,6 +556,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FFA52D401E2B8DAF00616088 /* Build configuration list for PBXNativeTarget "muteaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFA52D3E1E2B8DAF00616088 /* Debug */,
+				FFA52D3F1E2B8DAF00616088 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
