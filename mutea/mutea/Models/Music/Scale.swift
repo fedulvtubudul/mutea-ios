@@ -12,11 +12,19 @@ public struct Scale : CustomDebugStringConvertible {
 		self.degrees = degrees
 	}
 	
-	public var pitchClasses: [PitchClass] {
+	public func pitchClasses() -> [PitchClass] {
+		return self.pitchClassesWith(degrees: self.degrees)
+	}
+	
+	public func sortedPitchClasses() -> [PitchClass] {
+		return self.pitchClassesWith(degrees: self.degrees).sorted()
+	}
+	
+	private func pitchClassesWith(degrees: [Degree]) -> [PitchClass] {
 		let rootAbsoluteValue = self.key.absoluteValue
 		let rootRelativeValue = self.key.relativeValue
 		
-		return self.degrees.map({ (degree: Degree) -> PitchClass in
+		return degrees.map({ (degree: Degree) -> PitchClass in
 				let absoluteValue = PitchClassAbsoluteValue.value(withRoot: rootAbsoluteValue, interval: degree.absoluteValue)!
 				let relativeValue = PitchClassRelativeValue.value(withRoot: rootRelativeValue, interval: degree.relativeValue)!
 			

@@ -21,6 +21,7 @@
 		FF6FBA671E1A974000D5BE17 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FBA661E1A974000D5BE17 /* TestVC.swift */; };
 		FF6FBA691E1AD5DE00D5BE17 /* PitchClassValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FBA681E1AD5DE00D5BE17 /* PitchClassValue.swift */; };
 		FFA52D3A1E2B8DAF00616088 /* ScaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA52D391E2B8DAF00616088 /* ScaleTests.swift */; };
+		FFB0B61C1EEAF2DE00D489E6 /* ScaleDrill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0B61B1EEAF2DE00D489E6 /* ScaleDrill.swift */; };
 		FFB0B61E1EEAF41600D489E6 /* PitchRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0B61D1EEAF41600D489E6 /* PitchRange.swift */; };
 		FFB0B6201EEB0E8F00D489E6 /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0B61F1EEB0E8F00D489E6 /* Pitch.swift */; };
 		FFB0B6221EEB0EFF00D489E6 /* Octave.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0B6211EEB0EFF00D489E6 /* Octave.swift */; };
@@ -57,6 +58,7 @@
 		FFA52D371E2B8DAF00616088 /* muteaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = muteaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA52D391E2B8DAF00616088 /* ScaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleTests.swift; sourceTree = "<group>"; };
 		FFA52D3B1E2B8DAF00616088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFB0B61B1EEAF2DE00D489E6 /* ScaleDrill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleDrill.swift; sourceTree = "<group>"; };
 		FFB0B61D1EEAF41600D489E6 /* PitchRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PitchRange.swift; sourceTree = "<group>"; };
 		FFB0B61F1EEB0E8F00D489E6 /* Pitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
 		FFB0B6211EEB0EFF00D489E6 /* Octave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Octave.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		FF6FBA4E1E1A3F5200D5BE17 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FFB0B61A1EEAF23800D489E6 /* Drills */,
 				FF6FBA5F1E1A44C500D5BE17 /* Music */,
 			);
 			path = Models;
@@ -177,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				FF6FBA641E1A470100D5BE17 /* Degree.swift */,
+				FFB0B61F1EEB0E8F00D489E6 /* Pitch.swift */,
 				FF6FBA601E1A44DB00D5BE17 /* PitchClass.swift */,
 				FF6FBA681E1AD5DE00D5BE17 /* PitchClassValue.swift */,
 				FF6FBA621E1A45CF00D5BE17 /* Scale.swift */,
@@ -195,6 +199,14 @@
 				FFA52D3B1E2B8DAF00616088 /* Info.plist */,
 			);
 			path = muteaTests;
+			sourceTree = "<group>";
+		};
+		FFB0B61A1EEAF23800D489E6 /* Drills */ = {
+			isa = PBXGroup;
+			children = (
+				FFB0B61B1EEAF2DE00D489E6 /* ScaleDrill.swift */,
+			);
+			path = Drills;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +370,7 @@
 				FF6FBA671E1A974000D5BE17 /* TestVC.swift in Sources */,
 				FF3D6ADA1EF1ACD10059FFFE /* NoteValue.swift in Sources */,
 				FF6FBA691E1AD5DE00D5BE17 /* PitchClassValue.swift in Sources */,
+				FFB0B61C1EEAF2DE00D489E6 /* ScaleDrill.swift in Sources */,
 				FFB0B61E1EEAF41600D489E6 /* PitchRange.swift in Sources */,
 				FF6FBA511E1A3F7200D5BE17 /* AppDelegate.swift in Sources */,
 				FFB0B6221EEB0EFF00D489E6 /* Octave.swift in Sources */,
@@ -583,6 +596,7 @@
 				FFA52D3F1E2B8DAF00616088 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
