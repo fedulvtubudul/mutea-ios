@@ -1,7 +1,7 @@
 import Foundation
 
 
-public enum PitchClass : String, CustomDebugStringConvertible {
+public enum PitchClass : String, Comparable, CustomDebugStringConvertible {
 
 	case bSharp = "B#"
 	case c = "C"
@@ -101,4 +101,15 @@ public enum PitchClass : String, CustomDebugStringConvertible {
 		
 		return nil
 	}
+
+	// MARK: Comparable
+	
+	public static func ==(lhs: PitchClass, rhs: PitchClass) -> Bool {
+		return lhs.absoluteValue == rhs.absoluteValue
+	}
+		
+	public static func <(lhs: PitchClass, rhs: PitchClass) -> Bool {
+		return lhs.absoluteValue < rhs.absoluteValue
+	}
+
 }

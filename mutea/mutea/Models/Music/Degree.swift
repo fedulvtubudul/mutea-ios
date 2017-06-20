@@ -1,7 +1,7 @@
 import Foundation
 
 
-public enum Degree : String, CustomDebugStringConvertible {
+public enum Degree : String, Comparable, CustomDebugStringConvertible {
 
 //	case perfectFirst = "1"
 	case first = "1"
@@ -79,6 +79,16 @@ public enum Degree : String, CustomDebugStringConvertible {
 			case .minorSixth, .sixth, .augmentedSixth: return 5
 			case .minorSeventh, .majorSeventh: return 6
 		}
+	}
+	
+	// MARK: Comparable
+	
+	public static func ==(lhs: Degree, rhs: Degree) -> Bool {
+		return lhs.absoluteValue == rhs.absoluteValue
+	}
+		
+	public static func <(lhs: Degree, rhs: Degree) -> Bool {
+		return lhs.absoluteValue < rhs.absoluteValue
 	}
 
 }
