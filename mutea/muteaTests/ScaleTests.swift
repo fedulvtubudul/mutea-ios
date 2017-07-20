@@ -44,7 +44,7 @@ class ScaleTests: XCTestCase {
 
 	func checkScalePitches(inKey key: PitchClass, correctPitches: [PitchClass]) {
 		let scale = Scale.init(key: key, degrees: scaleDegrees)
-		let pitchClasses = scale.pitchClasses
+		let pitchClasses = scale.pitchClasses()
 		XCTAssertEqual(pitchClasses, correctPitches, "Wrong pitch classes \(pitchClasses) in key \(key)")
 	}
 }
