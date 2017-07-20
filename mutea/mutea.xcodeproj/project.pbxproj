@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8ED5A4101B7BCCDFD6933B2F /* Pods_muteaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7E14D3B232142FD201672F /* Pods_muteaTests.framework */; };
 		D465421BFA7FB2188BBA10C7 /* Pods_mutea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B7343D245C8BAE41EF2D60 /* Pods_mutea.framework */; };
 		FF3D6AD81EF1AC420059FFFE /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3D6AD71EF1AC420059FFFE /* Note.swift */; };
 		FF3D6ADA1EF1ACD10059FFFE /* NoteValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3D6AD91EF1ACD10059FFFE /* NoteValue.swift */; };
@@ -40,7 +41,10 @@
 /* Begin PBXFileReference section */
 		2583BEE9F26D56CA92DC5419 /* Pods-mutea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mutea.release.xcconfig"; path = "Pods/Target Support Files/Pods-mutea/Pods-mutea.release.xcconfig"; sourceTree = "<group>"; };
 		62B7343D245C8BAE41EF2D60 /* Pods_mutea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mutea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		731D19CCE0A7A5D8A1C152F9 /* Pods-muteaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-muteaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-muteaTests/Pods-muteaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C900DB00F9A8E054F7A5B27E /* Pods-mutea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mutea.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mutea/Pods-mutea.debug.xcconfig"; sourceTree = "<group>"; };
+		CF7E14D3B232142FD201672F /* Pods_muteaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_muteaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBCB84B08601ADDA7F198E15 /* Pods-muteaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-muteaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-muteaTests/Pods-muteaTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF3D6AD71EF1AC420059FFFE /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		FF3D6AD91EF1ACD10059FFFE /* NoteValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteValue.swift; sourceTree = "<group>"; };
 		FF6FBA321E1A3AAB00D5BE17 /* mutea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mutea.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED5A4101B7BCCDFD6933B2F /* Pods_muteaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				62B7343D245C8BAE41EF2D60 /* Pods_mutea.framework */,
+				CF7E14D3B232142FD201672F /* Pods_muteaTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -96,6 +102,8 @@
 			children = (
 				C900DB00F9A8E054F7A5B27E /* Pods-mutea.debug.xcconfig */,
 				2583BEE9F26D56CA92DC5419 /* Pods-mutea.release.xcconfig */,
+				731D19CCE0A7A5D8A1C152F9 /* Pods-muteaTests.debug.xcconfig */,
+				FBCB84B08601ADDA7F198E15 /* Pods-muteaTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -236,9 +244,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFA52D401E2B8DAF00616088 /* Build configuration list for PBXNativeTarget "muteaTests" */;
 			buildPhases = (
+				EBDE482625E731EC6FAA0F73 /* [CP] Check Pods Manifest.lock */,
 				FFA52D331E2B8DAF00616088 /* Sources */,
 				FFA52D341E2B8DAF00616088 /* Frameworks */,
 				FFA52D351E2B8DAF00616088 /* Resources */,
+				E0580FB513C50136E7248F0A /* [CP] Embed Pods Frameworks */,
+				A2F630E3FE3FA7DFEE1D323D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -327,7 +338,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		41258465AB3E33935FC96C69 /* [CP] Copy Pods Resources */ = {
@@ -358,6 +369,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mutea/Pods-mutea-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2F630E3FE3FA7DFEE1D323D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-muteaTests/Pods-muteaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0580FB513C50136E7248F0A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-muteaTests/Pods-muteaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBDE482625E731EC6FAA0F73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -540,6 +596,7 @@
 		};
 		FFA52D3E1E2B8DAF00616088 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 731D19CCE0A7A5D8A1C152F9 /* Pods-muteaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = GUCJ7YDNMH;
@@ -555,6 +612,7 @@
 		};
 		FFA52D3F1E2B8DAF00616088 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBCB84B08601ADDA7F198E15 /* Pods-muteaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = GUCJ7YDNMH;
