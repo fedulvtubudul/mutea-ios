@@ -1,0 +1,2 @@
+gem 'fastlane-plugin-xcodegen', '1.0.0'
+
