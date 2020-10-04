@@ -8,13 +8,29 @@ options:
   generateEmptyDirectories: true
 
 targets:
-  Mutea:
+  MuteaCore:
+    type: framework
+    platform:
+      - iOS
+      - macOS
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: "com.Mutea.CoreFramework"
+    sources:
+      - MuteaCore
+    scheme:
+      gatherCoverageData: true
+      testTargets:
+        - name: MuteaCore-Tests_${platform}
+          parallelizable: true
+          randomExecutionOrder: true
+
+  MuteaApp:
     type: application
     platform:
       - iOS
     deploymentTarget: "14.0"
     sources: 
-      - Mutea
+      - MuteaApp
     settings:
       configs:
         debug:
@@ -24,18 +40,18 @@ targets:
     scheme:
       environmentVariables:
         ENABLE_SIGNPOST: YES
-      testTargets:
-        - Mutea-Tests_${platform}
-  Mutea-Tests:
+
+  MuteaCore-Tests:
     type: bundle.unit-test
     platform:
       - iOS
+      - macOS
     scheme:
       testTargets:
-        - Mutea-Tests_${platform}
+        - MuteaCore-Tests_${platform}
       gatherCoverageData: true
     sources:
-      - MuteaTests
+      - MuteaCore-Tests
     dependencies:
-      - target: Mutea_${platform}
+      - target: MuteaCore_${platform}
 

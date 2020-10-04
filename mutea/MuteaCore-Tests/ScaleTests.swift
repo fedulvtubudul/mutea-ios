@@ -1,5 +1,5 @@
 import XCTest
-@testable import Mutea
+@testable import MuteaCore
 
 
 class ScaleTests: XCTestCase {
