@@ -1,0 +1,16 @@
+fastlane_version "2.162.0"
+
+
+default_platform :ios
+platform :ios do
+	desc "Generate Xcode project"
+        lane :generateProject do |options|
+		 xcodegen(
+			spec: "MuteaProject.yml",
+			quiet: false,
+			use_cache: true,
+			cache_path: "~/.xcodegen/cache/Mutea",
+			project_root: "."
+		)
+	end
+end

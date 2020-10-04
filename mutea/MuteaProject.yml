@@ -1,0 +1,41 @@
+name: Mutea
+
+options:
+  usesTabs: true
+  indentWidth: 4
+  tabWidth: 4
+  groupSortPosition: top
+  generateEmptyDirectories: true
+
+targets:
+  Mutea:
+    type: application
+    platform:
+      - iOS
+    deploymentTarget: "14.0"
+    sources: 
+      - Mutea
+    settings:
+      configs:
+        debug:
+          CUSTOM_BUILD_SETTING: my_debug_value
+        release:
+          CUSTOM_BUILD_SETTING: my_release_value
+    scheme:
+      environmentVariables:
+        ENABLE_SIGNPOST: YES
+      testTargets:
+        - Mutea-Tests_${platform}
+  Mutea-Tests:
+    type: bundle.unit-test
+    platform:
+      - iOS
+    scheme:
+      testTargets:
+        - Mutea-Tests_${platform}
+      gatherCoverageData: true
+    sources:
+      - MuteaTests
+    dependencies:
+      - target: Mutea_${platform}
+
