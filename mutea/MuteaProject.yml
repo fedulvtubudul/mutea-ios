@@ -7,6 +7,7 @@ options:
   groupSortPosition: top
   generateEmptyDirectories: true
 
+
 targets:
   MuteaCore:
     type: framework
@@ -23,6 +24,9 @@ targets:
         - name: MuteaCore-Tests_${platform}
           parallelizable: true
           randomExecutionOrder: true
+    postCompileScripts:
+      - script: BuildScripts/SwiftLint/lint.sh
+        name: SwiftLint
 
   MuteaApp:
     type: application
@@ -31,6 +35,8 @@ targets:
     deploymentTarget: "14.0"
     sources: 
       - MuteaApp
+      - path: BuildScripts
+        buildPhase: none
     settings:
       configs:
         debug:
