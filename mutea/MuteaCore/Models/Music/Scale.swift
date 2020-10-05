@@ -40,6 +40,6 @@ public struct Scale: CustomDebugStringConvertible {
 	}
 
 	public var debugDescription: String {
-		return "degrees: \(self.degrees) in \(self.key): \(self.pitchClasses)"
+		return "degrees: \(self.degrees) in \(self.key): \(self.pitchClasses())"
 	}
 }
