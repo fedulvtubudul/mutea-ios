@@ -20,7 +20,7 @@ public struct ScaleDrill: CustomDebugStringConvertible {
 		for octave in self.range.octaves {
 			for pitchClass in self.scale.sortedPitchClasses() {
 				let pitch = Pitch(pitchClass: pitchClass, octave: octave)
-				if (self.range.includesPitch(pitch)) {
+				if self.range.includesPitch(pitch) {
 					let note = Note(pitch: pitch, value: .quarter)
 					notes.append(note)
 				}

@@ -23,9 +23,9 @@ public struct Pitch: CustomDebugStringConvertible, Comparable {
 	}
 
 	public static func < (lhs: Pitch, rhs: Pitch) -> Bool {
-		if (lhs.octave < rhs.octave) {
+		if lhs.octave < rhs.octave {
 			return true
-		} else if (lhs.octave > rhs.octave) {
+		} else if lhs.octave > rhs.octave {
 			return false
 		} else {
 			return lhs.pitchClass.absoluteValue < rhs.pitchClass.absoluteValue

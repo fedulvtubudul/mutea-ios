@@ -53,7 +53,7 @@ public enum Degree: String, Comparable, CustomDebugStringConvertible {
 
 
 	public var debugDescription: String {
-		return self.rawValue;
+		return self.rawValue
 	}
 
 	public var absoluteValue: Int {
