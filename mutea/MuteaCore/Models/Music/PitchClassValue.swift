@@ -5,8 +5,7 @@
 import Foundation
 
 
-public enum PitchClassAbsoluteValue : Int, Comparable {
-
+public enum PitchClassAbsoluteValue: Int, Comparable {
 	case c = 0
 	case cd = 1
 	case d = 2
@@ -19,24 +18,22 @@ public enum PitchClassAbsoluteValue : Int, Comparable {
 	case a = 9
 	case ab = 10
 	case b = 11
-	
-	
+
+
 	public static func value(withRoot root: PitchClassAbsoluteValue, interval: Int) -> PitchClassAbsoluteValue? {
 		let newRawValue = (root.rawValue + interval) % 12
 		return PitchClassAbsoluteValue(rawValue: newRawValue)
 	}
-	
+
 	// MARK: Comparable
-		
-	public static func <(lhs: PitchClassAbsoluteValue, rhs: PitchClassAbsoluteValue) -> Bool {
+
+	public static func < (lhs: PitchClassAbsoluteValue, rhs: PitchClassAbsoluteValue) -> Bool {
 		return lhs.rawValue < rhs.rawValue
 	}
-	
 }
 
 
-public enum PitchClassRelativeValue : Int {
-
+public enum PitchClassRelativeValue: Int {
 	case c = 0
 	case d = 1
 	case e = 2
@@ -44,11 +41,10 @@ public enum PitchClassRelativeValue : Int {
 	case g = 4
 	case a = 5
 	case b = 6
-	
-	
+
+
 	public static func value(withRoot root: PitchClassRelativeValue, interval: Int) -> PitchClassRelativeValue? {
 		let newRawValue = (root.rawValue + interval) % 7
 		return PitchClassRelativeValue(rawValue: newRawValue)
 	}
-	
 }

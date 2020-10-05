@@ -21,5 +21,4 @@ public enum NoteValue {
 	case twoHundredFiftySixth
 
 	// TODO: dotted values.
-	
 }
