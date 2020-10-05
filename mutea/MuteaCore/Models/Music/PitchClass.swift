@@ -94,7 +94,9 @@ public enum PitchClass: String, Comparable, CustomDebugStringConvertible {
 		}
 	}
 
-	public static func classWithValue(absoluteValue: PitchClassAbsoluteValue, relativeValue: PitchClassRelativeValue) -> PitchClass? {
+	public static func classWithValue(absoluteValue: PitchClassAbsoluteValue,
+		relativeValue: PitchClassRelativeValue) -> PitchClass? {
+
 		for pitchClass in PitchClass.allValues {
 			let sameAbsoluteValue = pitchClass.absoluteValue == absoluteValue
 			let sameRelativeValue = pitchClass.relativeValue == relativeValue

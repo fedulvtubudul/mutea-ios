@@ -20,7 +20,9 @@ public enum PitchClassAbsoluteValue: Int, Comparable {
 	case b = 11
 
 
-	public static func value(withRoot root: PitchClassAbsoluteValue, interval: Int) -> PitchClassAbsoluteValue? {
+	public static func value(withRoot root: PitchClassAbsoluteValue, interval: Int)
+		-> PitchClassAbsoluteValue? {
+
 		let newRawValue = (root.rawValue + interval) % 12
 		return PitchClassAbsoluteValue(rawValue: newRawValue)
 	}
@@ -43,7 +45,9 @@ public enum PitchClassRelativeValue: Int {
 	case b = 6
 
 
-	public static func value(withRoot root: PitchClassRelativeValue, interval: Int) -> PitchClassRelativeValue? {
+	public static func value(withRoot root: PitchClassRelativeValue, interval: Int)
+		-> PitchClassRelativeValue? {
+
 		let newRawValue = (root.rawValue + interval) % 7
 		return PitchClassRelativeValue(rawValue: newRawValue)
 	}
