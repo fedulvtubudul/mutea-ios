@@ -1,0 +1,276 @@
+reporter: "xcode"
+
+###############
+###  RULES  ###
+###############
+
+anyobject_protocol: error
+force_cast: error
+force_try: warning
+
+line_length:
+  warning: 100
+  error: 120
+
+closure_body_length:
+  warning: 13
+  error: 20
+
+function_body_length:
+  warning: 50
+  error: 100
+
+file_length:
+  warning: 600
+  error: 800
+
+type_body_length:
+  warning: 550
+  error: 750
+
+cyclomatic_complexity:
+  ignores_case_statements: true
+  warning: 10
+  error: 20
+
+function_parameter_count:
+  warning: 5
+  error: 8
+
+type_name:
+  min_length: 3
+  max_length:
+    warning: 50
+    error: 60
+  excluded:
+    - ID
+
+identifier_name:
+  min_length: 1
+  max_length:
+    warning: 40
+    error: 60
+
+large_tuple:
+  warning: 3
+  error: 5
+
+nesting:
+  type_level:
+    warning: 5
+    error: 8
+  statement_level:
+    warning: 5
+    error: 8
+
+vertical_whitespace:
+  max_empty_lines: 2
+
+switch_case_alignment:
+  indented_cases: true
+
+file_header:
+  required_pattern: |
+                    \/\/
+                    \/\/ Copyright © fedulvtubudul, \d{4}\. All rights reserved\.
+                    \/\/
+
+opt_in_rules:
+  - anyobject_protocol
+  - attributes
+  - closure_body_length
+  - closure_end_indentation
+  - closure_spacing
+  - discouraged_object_literal
+  - empty_count
+  - empty_string
+  - empty_xctest_method
+  - explicit_enum_raw_value
+  - fallthrough
+  - fatal_error_message
+  - file_header
+#  - file_types_order # Must be enabled after SwiftLint is updated from 0.32
+  - first_where
+  - for_where
+  - identical_operands
+  - implicitly_unwrapped_optional
+  - joined_default_parameter
+  - last_where
+  - let_var_whitespace
+  - lower_acl_than_parent
+  - modifier_order
+  - multiline_literal_brackets
+  - operator_usage_whitespace
+  - overridden_super_call
+  - override_in_extension
+  - pattern_matching_keywords
+  - private_action
+  - prohibited_super_call
+  - sorted_first_last
+  - static_operator
+  - strong_iboutlet
+  - unused_import
+  - vertical_whitespace_closing_braces
+  - yoda_condition
+
+
+# Implicitly enabled rules:
+#
+#  - class_delegate_protocol
+#  - closing_brace
+#  - file_length
+#  - force_cast
+#  - force_try
+#  - function_body_length
+#  - colon
+#  - comma
+#  - compiler_protocol_init
+#  - conditional_returns_on_newline
+#  - control_statement
+#  - custom_rules
+#  - cyclomatic_complexity
+#  - deployment_target
+#  - discarded_notification_center_observer
+#  - discouraged_direct_init
+#  - duplicate_imports
+#  - dynamic_inline
+#  - empty_enum_arguments
+#  - empty_parentheses_with_trailing_closure
+#  - function_parameter_count
+#  - generic_type_name
+#  - identifier_name
+#  - implicit_getter
+#  - is_disjoint
+#  - large_tuple
+#  - leading_whitespace
+#  - legacy_cggeometry_functions
+#  - legacy_constant
+#  - legacy_constructor
+#  - legacy_hashing
+#  - legacy_nsgeometry_functions
+#  - mark
+#  - multiple_closures_with_trailing_closure
+#  - nesting
+#  - no_fallthrough_only
+#  - nsobject_prefer_isequal
+#  - opening_brace
+#  - operator_whitespace
+#  - private_unit_test
+#  - protocol_property_accessors_order
+#  - reduce_boolean
+#  - redundant_discardable_let
+#  - redundant_objc_attribute
+#  - redundant_optional_initialization
+#  - redundant_set_access_control
+#  - redundant_void_return
+#  - return_arrow_whitespace
+#  - statement_position
+#  - superfluous_disable_command
+#  - switch_case_alignment
+#  - syntactic_sugar
+#  - todo
+#  - trailing_newline
+#  - trailing_semicolon
+#  - trailing_whitespace
+#  - type_body_length
+#  - type_name
+#  - unneeded_break_in_switch
+#  - unused_capture_list
+#  - unused_closure_parameter
+#  - unused_control_flow_label
+#  - unused_enumerated
+#  - unused_optional_binding
+#  - unused_setter_value
+#  - valid_ibinspectable
+#  - vertical_whitespace
+#  - void_return
+#  - weak_delegate
+#  - xctfail_message
+
+
+
+disabled_rules:
+  - explicit_type_interface # Should be enabled (has many false positives on SwiftLint 0.32.0)
+  - array_init # Should be enabled
+  - block_based_kvo # Should be enabled
+  - closure_parameter_position # Should be enabled
+  - collection_alignment
+  - contains_over_first_not_nil
+  - convenience_type # Should be enabled
+  - discouraged_optional_boolean
+  - discouraged_optional_collection
+  - empty_parameters
+  - explicit_acl
+  - explicit_init
+  - explicit_self
+  - explicit_top_level_acl
+  - extension_access_modifier
+  - file_name
+  - force_unwrapping # Should be enabled
+  - function_default_parameter_at_end
+  - implicit_return
+  - inert_defer
+  - legacy_random
+  - literal_expression_end_indentation
+  - missing_docs
+  - multiline_arguments
+  - multiline_arguments_brackets
+  - multiline_function_chains
+  - multiline_parameters
+  - multiline_parameters_brackets
+  - nimble_operator
+  - no_extension_access_modifier
+  - no_grouping_extension
+  - notification_center_detachment
+  - nslocalizedstring_key
+  - nslocalizedstring_require_bundle
+  - number_separator
+  - object_literal
+  - prefixed_toplevel_constant
+  - private_outlet
+  - private_over_fileprivate # Should be enabled
+  - prohibited_interface_builder
+  - quick_discouraged_call
+  - quick_discouraged_focused_test
+  - quick_discouraged_pending_test
+  - reduce_into
+  - redundant_nil_coalescing
+  - redundant_string_enum_value
+  - redundant_type_annotation
+  - required_deinit
+  - required_enum_case
+  - shorthand_operator
+  - single_test_class # Should be enabled
+  - sorted_imports
+  - strict_fileprivate # Should be enabled
+  - switch_case_on_newline
+  - toggle_bool
+  - trailing_closure
+  - trailing_comma
+  - type_contents_order # Should be enabled
+  - unavailable_function # Should be enabled
+  - unneeded_parentheses_in_closure_argument
+  - unowned_variable_capture
+  - untyped_error_in_catch
+  - unused_private_declaration
+  - vertical_parameter_alignment
+  - vertical_parameter_alignment_on_call
+  - vertical_whitespace_between_cases
+  - vertical_whitespace_opening_braces
+  - weak_computed_property
+  - xct_specific_matcher
+
+
+# Rules run by `swiftlint analyze` (experimental)
+analyzer_rules:
+  - explicit_self
+
+###############
+###  FILES  ###
+###############
+
+# Paths to include during linting.
+included:
+  - MuteaCore/
+  - MuteaApp/
+

@@ -1,3 +1,7 @@
+//
+// Copyright © fedulvtubudul, 2020. All rights reserved.
+//
+
 import Foundation
 
 
@@ -17,5 +21,4 @@ public enum NoteValue {
 	case twoHundredFiftySixth
 
 	// TODO: dotted values.
-	
 }

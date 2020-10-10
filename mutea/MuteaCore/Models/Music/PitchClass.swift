@@ -1,42 +1,46 @@
+//
+// Copyright © fedulvtubudul, 2020. All rights reserved.
+//
+
 import Foundation
 
 
-public enum PitchClass : String, Comparable, CustomDebugStringConvertible {
+public enum PitchClass: String, Comparable, CustomDebugStringConvertible {
 
 	case bSharp = "B#"
 	case c = "C"
-	
+
 	case cSharp = "C#"
 	case dFlat = "Db"
-	
+
 	case d = "D"
-	
+
 	case dSharp = "D#"
 	case eFlat = "Eb"
-	
+
 	case e = "E"
 	case fFlat = "Fb"
-	
+
 	case eSharp = "E#"
 	case f = "F"
-	
+
 	case fSharp = "F#"
 	case gFlat = "Gb"
-	
+
 	case g = "G"
-	
+
 	case gSharp = "G#"
 	case aFlat = "Ab"
-	
+
 	case a = "A"
-	
+
 	case aSharp = "A#"
 	case bFlat = "Bb"
-	
+
 	case b = "B"
 	case cFlat = "Cb"
-	
-	
+
+
 	static let allValues = [
 			cFlat, c, cSharp,
 			dFlat, d, dSharp,
@@ -60,7 +64,7 @@ public enum PitchClass : String, Comparable, CustomDebugStringConvertible {
 	public var debugDescription: String {
 		return self.rawValue
 	}
-	
+
 	public var absoluteValue: PitchClassAbsoluteValue {
 		switch self {
 			case .bSharp, .c: return .c
@@ -89,8 +93,10 @@ public enum PitchClass : String, Comparable, CustomDebugStringConvertible {
 			case .bFlat, .b, .bSharp: return .b
 		}
 	}
-	
-	public static func classWithValue(absoluteValue: PitchClassAbsoluteValue, relativeValue: PitchClassRelativeValue) -> PitchClass? {
+
+	public static func classWithValue(absoluteValue: PitchClassAbsoluteValue,
+		relativeValue: PitchClassRelativeValue) -> PitchClass? {
+
 		for pitchClass in PitchClass.allValues {
 			let sameAbsoluteValue = pitchClass.absoluteValue == absoluteValue
 			let sameRelativeValue = pitchClass.relativeValue == relativeValue
@@ -98,18 +104,16 @@ public enum PitchClass : String, Comparable, CustomDebugStringConvertible {
 				return pitchClass
 			}
 		}
-		
 		return nil
 	}
 
 	// MARK: Comparable
-	
-	public static func ==(lhs: PitchClass, rhs: PitchClass) -> Bool {
+
+	public static func == (lhs: PitchClass, rhs: PitchClass) -> Bool {
 		return lhs.absoluteValue == rhs.absoluteValue
 	}
-		
-	public static func <(lhs: PitchClass, rhs: PitchClass) -> Bool {
+
+	public static func < (lhs: PitchClass, rhs: PitchClass) -> Bool {
 		return lhs.absoluteValue < rhs.absoluteValue
 	}
-
 }

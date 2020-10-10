@@ -1,7 +1,11 @@
+//
+// Copyright © fedulvtubudul, 2020. All rights reserved.
+//
+
 import Foundation
 
 
-public enum Octave : Int, Comparable {
+public enum Octave: Int, Comparable {
 
 	case doubleContra = -5
 	case subContra = -4
@@ -16,25 +20,22 @@ public enum Octave : Int, Comparable {
 	case sixth = 5
 	case seventh = 6
 	case eighth = 7
-	
+
 	public static func range(bottom: Octave, top: Octave) -> [Octave] {
 		var result: [Octave] = []
-		
+
 		for i in bottom.rawValue ... top.rawValue {
 			if let octave = Octave(rawValue: i) {
-    			result.append(octave)
+				result.append(octave)
 			}
 		}
-		
+
 		return result
 	}
-	
+
 	// MARK: Comparable
-	
-	public static func <(lhs: Octave, rhs: Octave) -> Bool {
+
+	public static func < (lhs: Octave, rhs: Octave) -> Bool {
 		return lhs.rawValue < rhs.rawValue
 	}
-	
 }
-
-

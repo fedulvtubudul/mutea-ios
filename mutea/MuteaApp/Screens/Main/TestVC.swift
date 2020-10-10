@@ -1,11 +1,15 @@
+//
+// Copyright © fedulvtubudul, 2020. All rights reserved.
+//
+
 import UIKit
 
 
 class TestVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-		
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
 		let majorScaleDegrees: [Degree] = [
 				.first,
 				.second,
@@ -15,21 +19,20 @@ class TestVC: UIViewController {
 				.sixth,
 				.majorSeventh,
 			]
-		
+
 //		for key in PitchClass.possibleKeys {
 //			let scale = Scale.init(key: key, degrees: majorScaleDegrees)
 //			print(scale);
 //		}
 
-		let scale: Scale = Scale(key:.d, degrees:majorScaleDegrees)
-		
-		let bottom = Pitch(pitchClass:.bFlat, octave:.first)
-		let top = Pitch(pitchClass:.f, octave:.third)
-		let range = PitchRange(bottom:bottom, top:top)
-		
-		let drill = ScaleDrill(scale:scale, range:range)
-		
-		print(drill)
-    }
+		let scale: Scale = Scale(key: .d, degrees: majorScaleDegrees)
 
+		let bottom = Pitch(pitchClass: .bFlat, octave: .first)
+		let top = Pitch(pitchClass: .f, octave: .third)
+		let range = PitchRange(bottom: bottom, top: top)
+
+		let drill = ScaleDrill(scale: scale, range: range)
+
+		print(drill)
+	}
 }

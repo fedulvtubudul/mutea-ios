@@ -16,6 +16,8 @@ class ScaleTests: XCTestCase {
 	func testCMajorScalePitchClasses() {
 		let scale = Scale(key: .c, degrees: Self.majorScaleDegrees)
 		let result = scale.pitchClasses()
+    
+
 		let expectation: [PitchClass] = [.c, .d, .e, .f, .g, .a, .b]
 		XCTAssertEqual(result, expectation, "C major scale must equal \(expectation)")
 	}
