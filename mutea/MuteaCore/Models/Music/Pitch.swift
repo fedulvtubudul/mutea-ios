@@ -11,7 +11,7 @@ public struct Pitch: CustomDebugStringConvertible, Comparable {
 	public let octave: Octave
 
 	public var debugDescription: String {
-		return "\(self.pitchClass)_\(self.octave.rawValue)"
+		return "\(self.pitchClass)_\(self.octave)"
 	}
 
 	// MARK: Comparable
