@@ -34,6 +34,9 @@ targets:
       - MuteaApp
       - path: BuildScripts
         buildPhase: none
+    configFiles:
+      Debug: MuteaApp/Configuration/Debug.xcconfig
+      Release: MuteaApp/Configuration/Release.xcconfig
     settings:
       configs:
         debug:
