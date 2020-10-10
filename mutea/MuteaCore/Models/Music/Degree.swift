@@ -5,56 +5,22 @@
 import Foundation
 
 
-public enum Degree: String, Comparable, CustomDebugStringConvertible {
-
-//	case perfectFirst = "1"
-	case first = "1"
-//	case diminishedSecond = "-2"
-
-//	case augmentedFirst = "+1"
-	case minorSecond = "m2"
-
-//	case majorSecond = "M2"
-	case second = "2"
-//	case diminishedThird = "-3"
-
-//	case augmentedSecond = "+2"
-	case minorThird = "m3"
-
-	case majorThird = "M3"
-//	case diminishedFourth = "-4"
-
-//	case augmentedThird = "+3"
-//	case perfectFourth = "4"
-	case fourth = "4"
-
-	case augmentedFourth = "+4"
-	case diminishedFifth = "-5"
-
-//	case perfectFifth = "5"
-	case fifth = "5"
-//	case diminishedSixth = "-6"
-
-	case augmentedFifth = "+5"
-	case minorSixth = "m6"
-
-//	case majorSixth = "M6"
-	case sixth = "6"
-//	case diminishedSeventh = "-7"
-
-	case augmentedSixth = "+6"
-	case minorSeventh = "m7"
-
-	case majorSeventh = "M7"
-//	case diminishedEighth = "-8"
-
-//	case augmentedSeventh = "+7"
-//	case perfectEighth = "8"
-
-
-	public var debugDescription: String {
-		return self.rawValue
-	}
+public enum Degree {
+	case first
+	case minorSecond
+	case second
+	case minorThird
+	case majorThird
+	case fourth
+	case augmentedFourth
+	case diminishedFifth
+	case fifth
+	case augmentedFifth
+	case minorSixth
+	case sixth
+	case augmentedSixth
+	case minorSeventh
+	case majorSeventh
 
 	public var absoluteValue: Int {
 		switch self {
@@ -84,9 +50,35 @@ public enum Degree: String, Comparable, CustomDebugStringConvertible {
 			case .minorSeventh, .majorSeventh: return 6
 		}
 	}
+}
 
-	// MARK: Comparable
+// MARK: - CustomStringConvertible implementation
 
+extension Degree: CustomStringConvertible {
+	public var description: String {
+		switch self {
+			case .first: return "1"
+			case .minorSecond: return "m2"
+			case .second: return "2"
+			case .minorThird: return "m3"
+			case .majorThird: return "M3"
+			case .fourth: return "4"
+			case .augmentedFourth: return "+4"
+			case .diminishedFifth: return "-5"
+			case .fifth: return "5"
+			case .augmentedFifth: return "+5"
+			case .minorSixth: return "m6"
+			case .sixth: return "6"
+			case .augmentedSixth: return "+6"
+			case .minorSeventh: return "m7"
+			case .majorSeventh: return "M7"
+		}
+	}
+}
+
+// MARK: - Comparable implementation
+
+extension Degree: Comparable {
 	public static func == (lhs: Degree, rhs: Degree) -> Bool {
 		return lhs.absoluteValue == rhs.absoluteValue
 	}
