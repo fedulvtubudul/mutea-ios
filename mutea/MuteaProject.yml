@@ -11,9 +11,7 @@ options:
 targets:
   MuteaCore:
     type: framework
-    platform:
-      - iOS
-      - macOS
+    platform: iOS
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: "com.Mutea.CoreFramework"
     sources:
@@ -21,7 +19,7 @@ targets:
     scheme:
       gatherCoverageData: true
       testTargets:
-        - name: MuteaCore-Tests_${platform}
+        - name: MuteaCore-Tests
           parallelizable: true
           randomExecutionOrder: true
     postCompileScripts:
@@ -30,8 +28,7 @@ targets:
 
   MuteaApp:
     type: application
-    platform:
-      - iOS
+    platform: iOS
     deploymentTarget: "14.0"
     sources: 
       - MuteaApp
@@ -49,15 +46,12 @@ targets:
 
   MuteaCore-Tests:
     type: bundle.unit-test
-    platform:
-      - iOS
-      - macOS
+    platform: iOS
     scheme:
       testTargets:
-        - MuteaCore-Tests_${platform}
+        - MuteaCore-Tests
       gatherCoverageData: true
     sources:
       - MuteaCore-Tests
     dependencies:
-      - target: MuteaCore_${platform}
-
+      - target: MuteaCore
