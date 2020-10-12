@@ -6,7 +6,7 @@ import Foundation
 
 
 public struct Pitch {
-	public let pitchClass: PitchClass
+	public let pitchClass: PitchClassRepresentable
 	public let octave: Octave
 }
 
@@ -15,7 +15,7 @@ public struct Pitch {
 extension Pitch: Comparable {
 	public static func == (lhs: Pitch, rhs: Pitch) -> Bool {
 		let sameOctave = lhs.octave == rhs.octave
-		let samePitch = lhs.pitchClass.absoluteValue == rhs.pitchClass.absoluteValue
+		let samePitch = lhs.pitchClass.value == rhs.pitchClass.value
 		return sameOctave && samePitch
 	}
 
@@ -25,7 +25,7 @@ extension Pitch: Comparable {
 		} else if lhs.octave > rhs.octave {
 			return false
 		} else {
-			return lhs.pitchClass.absoluteValue < rhs.pitchClass.absoluteValue
+			return lhs.pitchClass.value < rhs.pitchClass.value
 		}
 	}
 }
