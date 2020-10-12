@@ -5,17 +5,14 @@
 import Foundation
 
 
-public struct Pitch: CustomDebugStringConvertible, Comparable {
-
+public struct Pitch {
 	public let pitchClass: PitchClass
 	public let octave: Octave
+}
 
-	public var debugDescription: String {
-		return "\(self.pitchClass)_\(self.octave)"
-	}
+// MARK: - Comparable implementation
 
-	// MARK: Comparable
-
+extension Pitch: Comparable {
 	public static func == (lhs: Pitch, rhs: Pitch) -> Bool {
 		let sameOctave = lhs.octave == rhs.octave
 		let samePitch = lhs.pitchClass.absoluteValue == rhs.pitchClass.absoluteValue
@@ -30,5 +27,13 @@ public struct Pitch: CustomDebugStringConvertible, Comparable {
 		} else {
 			return lhs.pitchClass.absoluteValue < rhs.pitchClass.absoluteValue
 		}
+	}
+}
+
+// MARK: - CustomStringConvertible implementation
+
+extension Pitch: CustomStringConvertible {
+	public var description: String {
+		return "\(pitchClass)\(octave.index)"
 	}
 }
