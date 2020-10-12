@@ -17,24 +17,20 @@ public enum Octave {
 	case fourth
 	case fifth
 	case sixth
-	case seventh
-	case eighth
 
 	public init?(index: Int) {
 		switch index {
-			case -5: self = .doubleContra
-			case -4: self = .subContra
-			case -3: self = .contra
-			case -2: self = .great
-			case -1: self = .small
-			case 0: self = .first
-			case 1: self = .second
-			case 2: self = .third
-			case 3: self = .fourth
-			case 4: self = .fifth
-			case 5: self = .sixth
-			case 6: self = .seventh
-			case 7: self = .eighth
+			case -1: self = .doubleContra
+			case 0: self = .subContra
+			case 1: self = .contra
+			case 2: self = .great
+			case 3: self = .small
+			case 4: self = .first
+			case 5: self = .second
+			case 6: self = .third
+			case 7: self = .fourth
+			case 8: self = .fifth
+			case 9: self = .sixth
 			default: return nil
 		}
 	}
@@ -53,19 +49,17 @@ public enum Octave {
 
 	public var index: Int {
 		switch self {
-			case .doubleContra: return -5
-			case .subContra: return -4
-			case .contra: return -3
-			case .great: return -2
-			case .small: return -1
-			case .first: return 0
-			case .second: return 1
-			case .third: return 2
-			case .fourth: return 3
-			case .fifth: return 4
-			case .sixth: return 5
-			case .seventh: return 6
-			case .eighth: return 7
+			case .doubleContra: return -1
+			case .subContra: return 0
+			case .contra: return 1
+			case .great: return 2
+			case .small: return 3
+			case .first: return 4
+			case .second: return 5
+			case .third: return 6
+			case .fourth: return 7
+			case .fifth: return 8
+			case .sixth: return 9
 		}
 	}
 }
