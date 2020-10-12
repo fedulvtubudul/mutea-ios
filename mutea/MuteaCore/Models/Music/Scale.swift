@@ -5,41 +5,37 @@
 import Foundation
 
 
-public struct Scale: CustomDebugStringConvertible {
-
-	public let degrees: [Degree]
-	public let key: PitchClass
-
-
-	public init(key: PitchClass, degrees: [Degree]) {
-		self.key = key
-		self.degrees = degrees
-	}
+public struct Scale {
+	public let key: Tonic
+	public let degrees: [DegreeValue]
 
 	public func pitchClasses() -> [PitchClass] {
-		return self.pitchClassesWith(degrees: self.degrees)
+		return degrees.map(pitchClass(for:))
 	}
 
 	public func sortedPitchClasses() -> [PitchClass] {
-		return self.pitchClassesWith(degrees: self.degrees).sorted()
+		return pitchClasses().sorted()
 	}
+}
 
-	private func pitchClassesWith(degrees: [Degree]) -> [PitchClass] {
-		let rootAbsoluteValue = self.key.absoluteValue
-		let rootRelativeValue = self.key.relativeValue
+// MARK: - CustomStringConvertible implementation
 
-		return degrees.map({ (degree: Degree) -> PitchClass in
-				let absoluteValue = PitchClassAbsoluteValue.value(withRoot: rootAbsoluteValue,
-					interval: degree.absoluteValue)!
-
-				let relativeValue = PitchClassRelativeValue.value(withRoot: rootRelativeValue,
-					interval: degree.relativeValue)!
-
-				return PitchClass.classWithValue(absoluteValue: absoluteValue, relativeValue: relativeValue)!
-			})
+extension Scale: CustomStringConvertible {
+	public var description: String {
+		return "[Degrees: \(degrees) in \(key): \(pitchClasses())]"
 	}
+}
 
-	public var debugDescription: String {
-		return "degrees: \(self.degrees) in \(self.key): \(self.pitchClasses())"
+// MARK: - Private methods
+
+private extension Scale {
+	// TODO: refactor to calculate just once!
+	func pitchClass(for degree: DegreeValue) -> PitchClass {
+		let absoluteValue = key.pitchClass.value.shifted(by: degree.intervalFromRoot)
+		let natural = key.pitchClass.natural.shifted(by: degree.relative.stepsFromRoot)
+		let naturalValue = natural.pitchClass.value
+		let shiftFromNatural = absoluteValue.shiftFrom(naturalValue)
+		let accidental = Accidental.withSemitones(shiftFromNatural)
+		return PitchClass(natural: natural, accidental: accidental)
 	}
 }

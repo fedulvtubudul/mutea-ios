@@ -3,7 +3,7 @@ import XCTest
 
 
 class ScaleTests: XCTestCase {
-	private static let majorScaleDegrees: [Degree] = [
+	private static let majorScaleDegrees: [DegreeValue] = [
 		.first,
 		.second,
 		.majorThird,

@@ -5,7 +5,7 @@
 import Foundation
 
 
-public enum PitchClassAbsoluteValue: Int, Comparable {
+public enum PitchClassValue: Int {
 	case c = 0
 	case cd = 1
 	case d = 2
@@ -19,36 +19,41 @@ public enum PitchClassAbsoluteValue: Int, Comparable {
 	case ab = 10
 	case b = 11
 
+	public func shifted(by shift: Int) -> PitchClassValue {
+		let shiftedRawValue = (rawValue + shift) % 12
+		let shiftedValue = PitchClassValue(rawValue: shiftedRawValue)
 
-	public static func value(withRoot root: PitchClassAbsoluteValue, interval: Int)
-		-> PitchClassAbsoluteValue? {
-
-		let newRawValue = (root.rawValue + interval) % 12
-		return PitchClassAbsoluteValue(rawValue: newRawValue)
+		// As `mod 12` is used while calculating raw value,
+		// we have guaranties that PitchClassValue can be initialized from raw value,
+		// but we want to avoid force unwraps and still have non-optional result.
+		assert(shiftedValue != nil, "PitchClassValue failed to shift \(shift) from \(self)")
+		return shiftedValue ?? self
 	}
 
-	// MARK: Comparable
-
-	public static func < (lhs: PitchClassAbsoluteValue, rhs: PitchClassAbsoluteValue) -> Bool {
-		return lhs.rawValue < rhs.rawValue
+	public func shiftFrom(_ other: PitchClassValue) -> Int {
+		let absoluteValue = rawValue - other.rawValue
+		if absoluteValue < -6 {
+			return absoluteValue + 12
+		} else if absoluteValue < 6 {
+			return absoluteValue
+		} else {
+			return absoluteValue - 12
+		}
 	}
 }
 
+// MARK: - PitchClassRepresentable implementation
 
-public enum PitchClassRelativeValue: Int {
-	case c = 0
-	case d = 1
-	case e = 2
-	case f = 3
-	case g = 4
-	case a = 5
-	case b = 6
+extension PitchClassValue: PitchClassRepresentable {
+	public var value: PitchClassValue {
+		return self
+	}
+}
 
+// MARK: - Comparable implementation
 
-	public static func value(withRoot root: PitchClassRelativeValue, interval: Int)
-		-> PitchClassRelativeValue? {
-
-		let newRawValue = (root.rawValue + interval) % 7
-		return PitchClassRelativeValue(rawValue: newRawValue)
+extension PitchClassValue: Comparable {
+	public static func < (lhs: PitchClassValue, rhs: PitchClassValue) -> Bool {
+		return lhs.rawValue < rhs.rawValue
 	}
 }

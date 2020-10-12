@@ -5,17 +5,15 @@
 import Foundation
 
 
-public struct Note: CustomDebugStringConvertible {
-
+public struct Note {
 	let pitch: Pitch
 	let value: NoteValue
+}
 
-	init(pitch: Pitch, value: NoteValue) {
-		self.pitch = pitch
-		self.value = value
-	}
+// MARK: - CustomStringConvertible implementation
 
-	public var debugDescription: String {
-		return "\(self.value) \(self.pitch)"
+extension Note: CustomStringConvertible {
+	public var description: String {
+		return "\(value)_\(pitch)"
 	}
 }
