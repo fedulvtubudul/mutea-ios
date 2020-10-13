@@ -9,6 +9,11 @@ public struct Scale {
 	public let key: Tonic
 	public let degrees: [DegreeValue]
 
+	public init(key: Tonic, degrees: [DegreeValue]) {
+		self.key = key
+		self.degrees = degrees
+	}
+
 	public func pitchClasses() -> [PitchClass] {
 		return degrees.map(pitchClass(for:))
 	}
