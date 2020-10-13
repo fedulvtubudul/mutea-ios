@@ -8,6 +8,11 @@ import Foundation
 public struct Note {
 	let pitch: Pitch
 	let value: NoteValue
+
+	public init(pitch: Pitch, value: NoteValue) {
+		self.pitch = pitch
+		self.value = value
+	}
 }
 
 // MARK: - CustomStringConvertible implementation

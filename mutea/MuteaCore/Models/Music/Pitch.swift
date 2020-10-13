@@ -8,6 +8,11 @@ import Foundation
 public struct Pitch {
 	public let pitchClass: PitchClassRepresentable
 	public let octave: Octave
+
+	public init(pitchClass: PitchClassRepresentable, octave: Octave) {
+		self.pitchClass = pitchClass
+		self.octave = octave
+	}
 }
 
 // MARK: - Comparable implementation
