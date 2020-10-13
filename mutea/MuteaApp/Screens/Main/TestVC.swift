@@ -3,6 +3,7 @@
 //
 
 import UIKit
+import MuteaCore
 
 
 class TestVC: UIViewController {
@@ -10,7 +11,7 @@ class TestVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		let majorScaleDegrees: [Degree] = [
+		let majorScaleDegrees: [DegreeValue] = [
 				.first,
 				.second,
 				.majorThird,
@@ -27,8 +28,8 @@ class TestVC: UIViewController {
 
 		let scale: Scale = Scale(key: .d, degrees: majorScaleDegrees)
 
-		let bottom = Pitch(pitchClass: .bFlat, octave: .first)
-		let top = Pitch(pitchClass: .f, octave: .third)
+		let bottom = Pitch(pitchClass: PitchClass.bFlat, octave: .first)
+		let top = Pitch(pitchClass: PitchClass.f, octave: .third)
 		let range = PitchRange(bottom: bottom, top: top)
 
 		let drill = ScaleDrill(scale: scale, range: range)
