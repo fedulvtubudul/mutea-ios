@@ -26,6 +26,50 @@ targets:
       - script: BuildScripts/SwiftLint/lint.sh
         name: SwiftLint
 
+  MuteaCore-Tests:
+    type: bundle.unit-test
+    platform: iOS
+    scheme:
+      testTargets:
+        - MuteaCore-Tests
+      gatherCoverageData: true
+    sources:
+      - MuteaCore-Tests
+    dependencies:
+      - target: MuteaCore
+
+  MuteaDrills:
+    type: framework
+    platform: iOS
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: "com.Mutea.DrillsFramework"
+    sources:
+      - MuteaDrills
+    scheme:
+      gatherCoverageData: true
+      testTargets:
+        - name: MuteaDrills-Tests
+          parallelizable: true
+          randomExecutionOrder: true
+    postCompileScripts:
+      - script: BuildScripts/SwiftLint/lint.sh
+        name: SwiftLint
+    dependencies:
+      - target: MuteaCore
+
+
+  MuteaDrills-Tests:
+    type: bundle.unit-test
+    platform: iOS
+    scheme:
+      testTargets:
+        - MuteaDrills-Tests
+      gatherCoverageData: true
+    sources:
+      - MuteaDrills-Tests
+    dependencies:
+      - target: MuteaDrills
+
   MuteaApp:
     type: application
     platform: iOS
@@ -46,15 +90,6 @@ targets:
     scheme:
       environmentVariables:
         ENABLE_SIGNPOST: YES
-
-  MuteaCore-Tests:
-    type: bundle.unit-test
-    platform: iOS
-    scheme:
-      testTargets:
-        - MuteaCore-Tests
-      gatherCoverageData: true
-    sources:
-      - MuteaCore-Tests
     dependencies:
       - target: MuteaCore
+      - target: MuteaDrills
